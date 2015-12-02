@@ -54,11 +54,10 @@
     'name': 'keyword.operator.comparison.1c'
     'match': '<\\=|>\\=|\\=|<|>'
   },
-  # {
-  # # выключает подсветку по блоку keyword.operator целиком
-  #   'name': 'keyword.operator.arithmetic.1c'
-  #   'match': '\\+|\\-|\\*|/|%|'
-  # },
+  {
+    'name': 'keyword.operator.arithmetic.1c'
+    'match': '\\+|\\-|\\*|\\/|%'
+  },
   {
     'name': 'keyword.operator.assignment.1c'
     'match': '\\='

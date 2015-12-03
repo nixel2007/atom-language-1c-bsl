@@ -10,26 +10,26 @@
     'match': '(//.*\\n)'
   },
   {
-    'name': 'string.quoted.double.1с'
+    'name': 'string.quoted.double.1c'
     'match': '("[^"]*")'
   },
   {
-    'name': 'string.interpolated.1с'
+    'name': 'string.interpolated.1c'
     'begin': '"'
     'end': '"'
     'patterns': [
       {
-        'name': 'constant.character.escape.1с'
+        'name': 'constant.character.escape.1c'
         'match': '""'
       }
     ]
   },
   {
-    'name': 'constant.language.1с'
+    'name': 'constant.language.1c'
     'match': '(?i:\\b(Неопределено|Истина|Ложь|NULL)\\b)'
   },
   {
-    'name': 'constant.numeric.1с'
+    'name': 'constant.numeric.1c'
     'match': '\\b((\\h{8}-(\\h{4}-){3}\\h{12})|\\d+\\.?\\d*)\\b'
   },
   {
@@ -37,15 +37,15 @@
     'match': '\\\'.+\\\''
   },
   {
-    'name': 'entity.name.function.1с'
+    'name': 'entity.name.function.1c'
     'match': '(?<=Процедура|Функция)[^\\(]*'
   },
   {
-    'name': 'storage.type.1с'
+    'name': 'storage.type.1c'
     'match': '(?i:\\b(Процедура|Функция|КонецПроцедуры|КонецФункции)\\b)'
   },
   {
-    'name': 'storage.modifier.1с'
+    'name': 'storage.modifier.1c'
     'match': '(?i:\\b(Знач|Экспорт)\\b)'
   },
   {
@@ -53,7 +53,7 @@
     'match': '\\#Использовать\\b'
   },
   {
-    'name': 'keyword.control.1с'
+    'name': 'keyword.control.1c'
     'match': '(?i:\\b(Прервать|Продолжить|Возврат)\\b)'
   },
   {
@@ -85,11 +85,11 @@
     'match': '(\\+|-|\\*|/|%)'
   },
   {
-    'name': 'keyword.operator.1с'
+    'name': 'keyword.operator.1c'
     'match': '(,|;|\\?)|(?i:(\\b(Перем|Новый)\\b))'
   },
   {
-    'name': 'variable.parameter.1с'
+    'name': 'variable.parameter.1c'
     'match': '\\b((?<=Знач)[^[,\\)=]]*)\\b'
   }
 ]

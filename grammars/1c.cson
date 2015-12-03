@@ -14,6 +14,17 @@
     'match': '("[^"]*")'
   },
   {
+    'name': 'string.interpolated.1с'
+    'begin': '"'
+    'end': '"'
+    'patterns': [
+      {
+        'name': 'constant.character.escape.1с'
+        'match': '""'
+      }
+    ]
+  },
+  {
     'name': 'constant.language.1с'
     'match': '(?i:\\b(Неопределено|Истина|Ложь|NULL)\\b)'
   },

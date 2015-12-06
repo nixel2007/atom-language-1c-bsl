@@ -1,95 +1,132 @@
-'scopeName': 'source.1c'
-'name': '1C'
-'fileTypes': [
-  'bsl'
-  'os'
+name: "1C"
+scopeName: "source.bsl"
+patterns: [
+	{
+		name: "comment.line.double-slash.bsl"
+		match: "(//.*\\n)"
+	}
+	{
+		name: "string.quoted.double.bsl"
+		match: "(\"[^\"]*\")"
+	}
+	{
+		name: "string.interpolated.bsl"
+		begin: "\\\""
+		patterns: [
+			{
+				match: ""
+			}
+			{
+				name: "constant.character.escape.bsl"
+			}
+		]
+		end: "\\\""
+	}
+	{
+		patterns: [
+			{
+				include: "$self"
+			}
+			{
+				name: "storage.modifier.bsl"
+				match: "(?i:\\bЗнач\\b)"
+			}
+			{
+				name: "invalid.illegal.bsl"
+				match: "\\b((?<==)(?i)[a-zа-я0-9_]*)\\b"
+			}
+			{
+				name: "invalid.illegal.bsl"
+				match: "\\b((?<== )(?i)[a-zа-я0-9_]*)\\b"
+			}
+			{
+				name: "variable.parameter.bsl"
+				match: "(?i:[a-zа-я0-9_]+)"
+			}
+		]
+		end: "(?i:\\)\\s+(Экспорт)?)"
+		begin: "(?i:(Процедура|Функция)\\s+([a-zа-я0-9_]+)\\s*\\()"
+		beginCaptures:
+			"1":
+				name: "storage.type.bsl"
+			"2":
+				name: "entity.name.function.bsl"
+		comment: "Proc and function defenition"
+		endCaptures:
+			"1":
+				name: "storage.modifier.bsl"
+	}
+	{
+		name: "constant.language.bsl"
+		match: "(?i:\\b(Неопределено|Истина|Ложь|NULL)\\b)"
+	}
+	{
+		name: "constant.numeric.bsl"
+		match: "\\b((\\h{8}-(\\h{4}-){3}\\h{12})|\\d+\\.?\\d*)\\b"
+	}
+	{
+		name: "constant.other.date.bsl"
+		match: "\\'.+\\'"
+	}
+	{
+		name: "storage.type.bsl"
+		match: "(?i:\\b(КонецПроцедуры|КонецФункции)\\b)"
+	}
+	{
+		name: "keyword.control.import.bsl"
+		match: "\\#Использовать\\b"
+	}
+	{
+		name: "keyword.control.bsl"
+		match: "(?i:\\b(Прервать|Продолжить|Возврат)\\b)"
+	}
+	{
+		name: "keyword.control.conditional.bsl"
+		match: "(?i:\\b(Если|Иначе|ИначеЕсли|Тогда|КонецЕсли)\\b)"
+	}
+	{
+		name: "keyword.control.exception.bsl"
+		match: "(?i:\\b(Попытка|Исключение|КонецПопытки|ВызватьИсключение)\\b)"
+	}
+	{
+		name: "keyword.control.repeat.bsl"
+		match: "(?i:\\b(Пока|Для (Каждого)?|Из|По|Цикл|КонецЦикла)\\b)"
+	}
+	{
+		name: "keyword.operator.logical.bsl"
+		match: "(?i:\\b(НЕ|И|ИЛИ)\\b)"
+	}
+	{
+		name: "keyword.operator.comparison.bsl"
+		match: "<=|>=|=|<|>"
+	}
+	{
+		name: "keyword.operator.assignment.bsl"
+		match: "(=)"
+	}
+	{
+		name: "keyword.operator.arithmetic.bsl"
+		match: "(\\+|-|\\*|/|%)"
+	}
+	{
+		name: "keyword.operator.bsl"
+		match: "(,|;|\\?)|(?i:(\\b(Перем|Новый)\\b))"
+	}
+	{
+		name: "support.function.bsl"
+		match: "(^|\\s)(?i:(ACos|ACos|ASin|ASin|ATan|ATan|Cos|Cos|Exp|Exp|Log|Log|Log10|Log10|Pow|Pow|Sin|Sin|Sqrt|Sqrt|Tan|Tan|Булево|Boolean|ВРег|Upper|Вычислить|Eval|Выполнить|Execute|Год|Year|Дата|Date|День|Day|ДеньГода|DayOfYear|ДеньНедели|WeekDay|ДобавитьМесяц|AddMonth|ИнформацияОбОшибке|ErrorInfo|КодСимвола|CharCode|КонецГода|EndOfYear|КонецДня|EndOfDay|КонецКвартала|EndOfQuarter|КонецМесяца|EndOfMonth|КонецМинуты|EndOfMinute|КонецНедели|EndOfWeek|КонецЧаса|EndOfHour|Лев|Left|Макс|Max|Месяц|Month|Мин|Min|Минута|Minute|Найти|Find|НачалоГода|BegOfYear|НачалоДня|BegOfDay|НачалоКвартала|BegOfQuarter|НачалоМесяца|BegOfMonth|НачалоМинуты|BegOfMinute|НачалоНедели|BegOfWeek|НачалоЧаса|BegOfHour|НеделяГода|WeekOfYear|НРег|Lower|Окр|Round|ОписаниеОшибки|ErrorDescription|Прав|Right|ПустаяСтрока|IsBlankString|Секунда|Second|Символ|Char|СокрЛ|TrimL|СокрЛП|TrimAll|СокрП|TrimR|Сред|Mid|СтрДлина|StrLen|СтрЗаменить|StrReplace|Строка|String|СтрПолучитьСтроку|StrGetLine|СтрЧислоВхождений|StrOccurrenceCount|СтрЧислоСтрок|StrLineCount|ТекущаяДата|CurrentDate|Тип|Type|ТипЗнч|TypeOf|ТРег|Title|Формат|Format|Цел|Int|Час|Hour|Число|Number))\\s*\\("
+	}
+	{
+		name: "storage.modifier.bsl"
+		match: "(?i:&(НаКлиенте|НаСервере|НаСервереБезКонтекста|НаКлиентеНаСервереБезКонтекста|НаКлиентеНаСервере))"
+	}
+	{
+		name: "meta.preprocessor.bsl"
+		match: "(?i:#(Если|ИначеЕсли|Иначе|КонецЕсли).*(Тогда)?)"
+	}
 ]
-'patterns': [
-  {
-    'name': 'comment.line.double-slash.1c'
-    'match': '(//.*\\n)'
-  },
-  {
-    'name': 'string.quoted.double.1c'
-    'match': '("[^"]*")'
-  },
-  {
-    'name': 'string.interpolated.1c'
-    'begin': '"'
-    'end': '"'
-    'patterns': [
-      {
-        'name': 'constant.character.escape.1c'
-        'match': '""'
-      }
-    ]
-  },
-  {
-    'name': 'constant.language.1c'
-    'match': '(?i:\\b(Неопределено|Истина|Ложь|NULL)\\b)'
-  },
-  {
-    'name': 'constant.numeric.1c'
-    'match': '\\b((\\h{8}-(\\h{4}-){3}\\h{12})|\\d+\\.?\\d*)\\b'
-  },
-  {
-    'name': 'constant.other.date.1c'
-    'match': '\\\'.+\\\''
-  },
-  {
-    'name': 'entity.name.function.1c'
-    'match': '(?<=Процедура|Функция)[^\\(]*'
-  },
-  {
-    'name': 'storage.type.1c'
-    'match': '(?i:\\b(Процедура|Функция|КонецПроцедуры|КонецФункции)\\b)'
-  },
-  {
-    'name': 'storage.modifier.1c'
-    'match': '(?i:\\b(Знач|Экспорт)\\b)'
-  },
-  {
-    'name': 'keyword.control.import.1c'
-    'match': '\\#Использовать\\b'
-  },
-  {
-    'name': 'keyword.control.1c'
-    'match': '(?i:\\b(Прервать|Продолжить|Возврат)\\b)'
-  },
-  {
-    'name': 'keyword.control.conditional.1c'
-    'match': '(?i:\\b(Если|Иначе|ИначеЕсли|Тогда|КонецЕсли)\\b)'
-  },
-  {
-    'name': 'keyword.control.exception.1c'
-    'match': '(?i:\\b(Попытка|Исключение|КонецПопытки|ВызватьИсключение)\\b)'
-  },
-  {
-    'name': 'keyword.control.repeat.1c'
-    'match': '(?i:\\b(Пока|Для (Каждого)?|Из|По|Цикл|КонецЦикла)\\b)'
-  },
-  {
-    'name': 'keyword.operator.logical.1c'
-    'match': '(?i:\\b(НЕ|И|ИЛИ)\\b)'
-  },
-  {
-    'name': 'keyword.operator.comparison.1c'
-    'match': '<=|>=|=|<|>'
-  },
-  {
-    'name': 'keyword.operator.assignment.1c'
-    'match': '(=)'
-  },
-  {
-    'name': 'keyword.operator.arithmetic.1c'
-    'match': '(\\+|-|\\*|/|%)'
-  },
-  {
-    'name': 'keyword.operator.1c'
-    'match': '(,|;|\\?)|(?i:(\\b(Перем|Новый)\\b))'
-  },
-  {
-    'name': 'variable.parameter.1c'
-    'match': '\\b((?<=Знач)[^[,\\)=]]*)\\b'
-  }
+fileTypes: [
+	"bsl"
+	"os"
 ]
+uuid: "cf0633ff-beee-424a-a2f7-3dce4093e139"

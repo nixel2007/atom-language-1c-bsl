@@ -1,5 +1,10 @@
-name: "1C"
+name: "1C (BSL)"
 scopeName: "source.bsl"
+fileTypes: [
+	"bsl"
+	"os"
+]
+uuid: "cf0633ff-beee-424a-a2f7-3dce4093e139"
 patterns: [
 	{
 		name: "comment.line.double-slash.bsl"
@@ -12,6 +17,7 @@ patterns: [
 	{
 		name: "string.interpolated.bsl"
 		begin: "\\\""
+		end: "\\\""
 		patterns: [
 			{
 				match: ""
@@ -20,9 +26,19 @@ patterns: [
 				name: "constant.character.escape.bsl"
 			}
 		]
-		end: "\\\""
 	}
 	{
+		comment: "Proc and function defenition"
+		begin: "(?i:(Процедура|Функция)\\s+([a-zа-я0-9_]+)\\s*\\()"
+		beginCaptures:
+			"1":
+				name: "storage.type.bsl"
+			"2":
+				name: "entity.name.function.bsl"
+		end: "(?i:\\)\\s+(Экспорт)?)"
+		endCaptures:
+			"1":
+				name: "storage.modifier.bsl"
 		patterns: [
 			{
 				include: "$self"
@@ -44,17 +60,6 @@ patterns: [
 				match: "(?i:[a-zа-я0-9_]+)"
 			}
 		]
-		end: "(?i:\\)\\s+(Экспорт)?)"
-		begin: "(?i:(Процедура|Функция)\\s+([a-zа-я0-9_]+)\\s*\\()"
-		beginCaptures:
-			"1":
-				name: "storage.type.bsl"
-			"2":
-				name: "entity.name.function.bsl"
-		comment: "Proc and function defenition"
-		endCaptures:
-			"1":
-				name: "storage.modifier.bsl"
 	}
 	{
 		name: "constant.language.bsl"
@@ -125,8 +130,3 @@ patterns: [
 		match: "(?i:#(Если|ИначеЕсли|Иначе|КонецЕсли).*(Тогда)?)"
 	}
 ]
-fileTypes: [
-	"bsl"
-	"os"
-]
-uuid: "cf0633ff-beee-424a-a2f7-3dce4093e139"

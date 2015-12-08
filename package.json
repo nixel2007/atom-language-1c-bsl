@@ -8,7 +8,7 @@
     "syntax",
     "1C"
   ],
-  "repository": "https://github.com/nixel2007/atom-language-1c",
+  "repository": "https://github.com/xDrivenDevelopment/atom-language-1c-bsl",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"

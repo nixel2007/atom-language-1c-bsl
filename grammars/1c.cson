@@ -20,7 +20,7 @@ patterns: [
 		end: "\\\""
 		patterns: [
 			{
-				match: ""
+				match: "\\\"\\\""
 			}
 			{
 				name: "constant.character.escape.bsl"
@@ -29,13 +29,13 @@ patterns: [
 	}
 	{
 		comment: "Proc and function defenition"
-		begin: "(?i:(Процедура|Функция)\\s+([a-zа-я0-9_]+)\\s*\\()"
+		begin: "(?i:(Процедура|Procedure|Функция|Function)\\s+([a-zа-я0-9_]+)\\s*\\()"
 		beginCaptures:
 			"1":
 				name: "storage.type.bsl"
 			"2":
 				name: "entity.name.function.bsl"
-		end: "(?i:\\)\\s+(Экспорт)?)"
+		end: "(?i:\\)\\s+(Экспорт|Export)?)"
 		endCaptures:
 			"1":
 				name: "storage.modifier.bsl"
@@ -45,7 +45,7 @@ patterns: [
 			}
 			{
 				name: "storage.modifier.bsl"
-				match: "(?i:\\bЗнач\\b)"
+				match: "(?i:\\b(Знач|Val)\\b)"
 			}
 			{
 				name: "invalid.illegal.bsl"
@@ -63,7 +63,7 @@ patterns: [
 	}
 	{
 		name: "constant.language.bsl"
-		match: "(?i:\\b(Неопределено|Истина|Ложь|NULL)\\b)"
+		match: "(?i:\\b(Неопределено|Undefined|Истина|True|Ложь|False|NULL)\\b)"
 	}
 	{
 		name: "constant.numeric.bsl"
@@ -75,31 +75,31 @@ patterns: [
 	}
 	{
 		name: "storage.type.bsl"
-		match: "(?i:\\b(КонецПроцедуры|КонецФункции)\\b)"
+		match: "(?i:\\b(КонецПроцедуры|EndProcedure|КонецФункции|EndFunction)\\b)"
 	}
 	{
 		name: "keyword.control.import.bsl"
-		match: "\\#Использовать\\b"
+		match: "\\#(Использовать|Use)\\b"
 	}
 	{
 		name: "keyword.control.bsl"
-		match: "(?i:\\b(Прервать|Продолжить|Возврат)\\b)"
+		match: "(?i:\\b(Прервать|Break|Продолжить|Continue|Возврат|Return)\\b)"
 	}
 	{
 		name: "keyword.control.conditional.bsl"
-		match: "(?i:\\b(Если|Иначе|ИначеЕсли|Тогда|КонецЕсли)\\b)"
+		match: "(?i:\\b(Если|If|Иначе|Else|ИначеЕсли|ElsIf|Тогда|Then|КонецЕсли|EndIf)\\b)"
 	}
 	{
 		name: "keyword.control.exception.bsl"
-		match: "(?i:\\b(Попытка|Исключение|КонецПопытки|ВызватьИсключение)\\b)"
+		match: "(?i:\\b(Попытка|Try|Исключение|Except|КонецПопытки|EndTry|ВызватьИсключение|Raise)\\b)"
 	}
 	{
 		name: "keyword.control.repeat.bsl"
-		match: "(?i:\\b(Пока|Для (Каждого)?|Из|По|Цикл|КонецЦикла)\\b)"
+		match: "(?i:\\b(Пока|While|(Для|For) (Каждого|Each)?|Из|In|По|To|Цикл|Do|КонецЦикла|EndDo)\\b)"
 	}
 	{
 		name: "keyword.operator.logical.bsl"
-		match: "(?i:\\b(НЕ|И|ИЛИ)\\b)"
+		match: "(?i:\\b(НЕ|NOT|И|AND|ИЛИ|OR)\\b)"
 	}
 	{
 		name: "keyword.operator.comparison.bsl"
@@ -115,7 +115,7 @@ patterns: [
 	}
 	{
 		name: "keyword.operator.bsl"
-		match: "(,|;|\\?)|(?i:(\\b(Перем|Новый)\\b))"
+		match: "(,|;|\\?)|(?i:(\\b(Перем|Var|Новый|New)\\b))"
 	}
 	{
 		name: "support.function.bsl"
@@ -123,10 +123,10 @@ patterns: [
 	}
 	{
 		name: "storage.modifier.bsl"
-		match: "(?i:&(НаКлиенте|НаСервере|НаСервереБезКонтекста|НаКлиентеНаСервереБезКонтекста|НаКлиентеНаСервере))"
+		match: "(?i:&(НаКлиенте|AtClient|НаСервере|AtServer|НаСервереБезКонтекста|AtServerNoContext|НаКлиентеНаСервереБезКонтекста|AtClientAtServerNoContext|НаКлиентеНаСервере|AtClientAtServer))"
 	}
 	{
 		name: "keyword.other.preprocessor.bsl"
-		match: "(?i:#(Если|ИначеЕсли|Иначе|КонецЕсли).*(Тогда)?)"
+		match: "(?i:#(Если|If|ИначеЕсли|ElsIf|Иначе|Else|КонецЕсли|EndIf).*(Тогда|Then)?)"
 	}
 ]

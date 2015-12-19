@@ -29,13 +29,13 @@ patterns: [
 	}
 	{
 		comment: "Proc and function defenition"
-		begin: "(?i:(Процедура|Procedure|Функция|Function)\\s+([a-zа-я0-9_]+)\\s*\\()"
+		begin: "(?i:(?<=[^\\wа-ё]|^)(Процедура|Procedure|Функция|Function)\\s+([a-zа-я0-9_]+)\\s*\\()"
 		beginCaptures:
 			"1":
 				name: "storage.type.bsl"
 			"2":
 				name: "entity.name.function.bsl"
-		end: "(?i:\\)\\s+(Экспорт|Export)?)"
+		end: "(?i:\\)\\s+((Экспорт|Export)(?=[^\\wа-ё]|$))?)"
 		endCaptures:
 			"1":
 				name: "storage.modifier.bsl"
@@ -45,15 +45,15 @@ patterns: [
 			}
 			{
 				name: "storage.modifier.bsl"
-				match: "(?i:\\b(Знач|Val)\\b)"
+				match: "(?i:(?<=[^\\wа-ё]|^)(Знач|Val)(?=[^\\wа-ё]|$))"
 			}
 			{
 				name: "invalid.illegal.bsl"
-				match: "\\b((?<==)(?i)[a-zа-я0-9_]*)\\b"
+				match: "(?<=[^\\wа-ё]|^)((?<==)(?i)[a-zа-я0-9_]*)(?=[^\\wа-ё]|$)"
 			}
 			{
 				name: "invalid.illegal.bsl"
-				match: "\\b((?<== )(?i)[a-zа-я0-9_]*)\\b"
+				match: "(?<=[^\\wа-ё]|^)((?<== )(?i)[a-zа-я0-9_]*)(?=[^\\wа-ё]|$)"
 			}
 			{
 				name: "variable.parameter.bsl"
@@ -63,7 +63,7 @@ patterns: [
 	}
 	{
 		comment: "Define of variable"
-		begin: "(?i:(Перем|Var)\\s+[a-zа-я0-9_]+\\s*)"
+		begin: "(?i:(?<=[^\\wа-ё]|^)(Перем|Var)\\s+[a-zа-я0-9_]+\\s*)"
 		beginCaptures:
 			"1":
 				name: "storage.type.var.bsl"
@@ -74,11 +74,11 @@ patterns: [
 	}
 	{
 		name: "constant.language.bsl"
-		match: "(?i:\\b(Неопределено|Undefined|Истина|True|Ложь|False|NULL)\\b)"
+		match: "(?i:(?<=[^\\wа-ё]|^)(Неопределено|Undefined|Истина|True|Ложь|False|NULL)(?=[^\\wа-ё]|$))"
 	}
 	{
 		name: "constant.numeric.bsl"
-		match: "\\b((\\h{8}-(\\h{4}-){3}\\h{12})|\\d+\\.?\\d*)\\b"
+		match: "\\b((\\h{8}-(\\h{4}-){3}\\h{12})|\\d+\\.?\\d*)(?=[^\\wа-ё]|$)"
 	}
 	{
 		name: "constant.other.date.bsl"
@@ -86,31 +86,31 @@ patterns: [
 	}
 	{
 		name: "storage.type.bsl"
-		match: "(?i:\\b(КонецПроцедуры|EndProcedure|КонецФункции|EndFunction)\\b)"
+		match: "(?i:(?<=[^\\wа-ё]|^)(КонецПроцедуры|EndProcedure|КонецФункции|EndFunction)(?=[^\\wа-ё]|$))"
 	}
 	{
 		name: "keyword.control.import.bsl"
-		match: "\\#(Использовать|Use)\\b"
+		match: "\\#(Использовать|Use)(?=[^\\wа-ё]|$)"
 	}
 	{
 		name: "keyword.control.bsl"
-		match: "(?i:\\b(Прервать|Break|Продолжить|Continue|Возврат|Return)\\b)"
+		match: "(?i:(?<=[^\\wа-ё]|^)(Прервать|Break|Продолжить|Continue|Возврат|Return)(?=[^\\wа-ё]|$))"
 	}
 	{
 		name: "keyword.control.conditional.bsl"
-		match: "(?i:\\b(Если|If|Иначе|Else|ИначеЕсли|ElsIf|Тогда|Then|КонецЕсли|EndIf)\\b)"
+		match: "(?i:(?<=[^\\wа-ё]|^)(Если|If|Иначе|Else|ИначеЕсли|ElsIf|Тогда|Then|КонецЕсли|EndIf)(?=[^\\wа-ё]|$))"
 	}
 	{
 		name: "keyword.control.exception.bsl"
-		match: "(?i:\\b(Попытка|Try|Исключение|Except|КонецПопытки|EndTry|ВызватьИсключение|Raise)\\b)"
+		match: "(?i:(?<=[^\\wа-ё]|^)(Попытка|Try|Исключение|Except|КонецПопытки|EndTry|ВызватьИсключение|Raise)(?=[^\\wа-ё]|$))"
 	}
 	{
 		name: "keyword.control.repeat.bsl"
-		match: "(?i:\\b(Пока|While|(Для|For) (Каждого|Each)?|Из|In|По|To|Цикл|Do|КонецЦикла|EndDo)\\b)"
+		match: "(?i:(?<=[^\\wа-ё]|^)(Пока|While|(Для|For) (Каждого|Each)?|Из|In|По|To|Цикл|Do|КонецЦикла|EndDo)(?=[^\\wа-ё]|$))"
 	}
 	{
 		name: "keyword.operator.logical.bsl"
-		match: "(?i:\\b(НЕ|NOT|И|AND|ИЛИ|OR)\\b)"
+		match: "(?i:(?<=[^\\wа-ё]|^)(НЕ|NOT|И|AND|ИЛИ|OR)(?=[^\\wа-ё]|$))"
 	}
 	{
 		name: "keyword.operator.comparison.bsl"
@@ -131,7 +131,7 @@ patterns: [
 	{
 		name: "support.function.bsl"
 		comment: "Functions w/o brackets"
-		match: "(?i:\\b(Новый|New)\\b)"
+		match: "(?i:(?<=[^\\wа-ё]|^)(Новый|New)(?=[^\\wа-ё]|$))"
 	}
 	{
 		name: "support.function.bsl"

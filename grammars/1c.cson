@@ -29,13 +29,13 @@ patterns: [
 	}
 	{
 		comment: "Proc and function defenition"
-		begin: "(?i:(?<=[^\\wа-ё]|^)(Процедура|Procedure|Функция|Function)\\s+([a-zа-я0-9_]+)\\s*\\()"
+		begin: "(?i:(?<=[^\\wа-яё]|^)(Процедура|Procedure|Функция|Function)\\s+([a-zа-яё0-9_]+)\\s*\\()"
 		beginCaptures:
 			"1":
 				name: "storage.type.bsl"
 			"2":
 				name: "entity.name.function.bsl"
-		end: "(?i:\\)\\s+((Экспорт|Export)(?=[^\\wа-ё]|$))?)"
+		end: "(?i:\\)\\s+((Экспорт|Export)(?=[^\\wа-яё]|$))?)"
 		endCaptures:
 			"1":
 				name: "storage.modifier.bsl"
@@ -45,25 +45,25 @@ patterns: [
 			}
 			{
 				name: "storage.modifier.bsl"
-				match: "(?i:(?<=[^\\wа-ё]|^)(Знач|Val)(?=[^\\wа-ё]|$))"
+				match: "(?i:(?<=[^\\wа-яё]|^)(Знач|Val)(?=[^\\wа-яё]|$))"
 			}
 			{
 				name: "invalid.illegal.bsl"
-				match: "(?<=[^\\wа-ё]|^)((?<==)(?i)[a-zа-я0-9_]*)(?=[^\\wа-ё]|$)"
+				match: "(?<=[^\\wа-яё]|^)((?<==)(?i)[a-zа-яё0-9_]+)(?=[^\\wа-яё]|$)"
 			}
 			{
 				name: "invalid.illegal.bsl"
-				match: "(?<=[^\\wа-ё]|^)((?<== )(?i)[a-zа-я0-9_]*)(?=[^\\wа-ё]|$)"
+				match: "(?<=[^\\wа-яё]|^)((?<==\\s)\\s*(?i)[a-zа-яё0-9_]+)(?=[^\\wа-яё]|$)"
 			}
 			{
 				name: "variable.parameter.bsl"
-				match: "(?i:[a-zа-я0-9_]+)"
+				match: "(?i:[a-zа-яё0-9_]+)"
 			}
 		]
 	}
 	{
 		comment: "Define of variable"
-		begin: "(?i:(?<=[^\\wа-ё]|^)(Перем|Var)\\s+[a-zа-я0-9_]+\\s*)"
+		begin: "(?i:(?<=[^\\wа-яё]|^)(Перем|Var)\\s+[a-zа-яё0-9_]+\\s*)"
 		beginCaptures:
 			"1":
 				name: "storage.type.var.bsl"
@@ -74,11 +74,11 @@ patterns: [
 	}
 	{
 		name: "constant.language.bsl"
-		match: "(?i:(?<=[^\\wа-ё]|^)(Неопределено|Undefined|Истина|True|Ложь|False|NULL)(?=[^\\wа-ё]|$))"
+		match: "(?i:(?<=[^\\wа-яё]|^)(Неопределено|Undefined|Истина|True|Ложь|False|NULL)(?=[^\\wа-яё]|$))"
 	}
 	{
 		name: "constant.numeric.bsl"
-		match: "\\b((\\h{8}-(\\h{4}-){3}\\h{12})|\\d+\\.?\\d*)(?=[^\\wа-ё]|$)"
+		match: "\\b((\\h{8}-(\\h{4}-){3}\\h{12})|\\d+\\.?\\d*)\\b"
 	}
 	{
 		name: "constant.other.date.bsl"
@@ -86,31 +86,31 @@ patterns: [
 	}
 	{
 		name: "storage.type.bsl"
-		match: "(?i:(?<=[^\\wа-ё]|^)(КонецПроцедуры|EndProcedure|КонецФункции|EndFunction)(?=[^\\wа-ё]|$))"
+		match: "(?i:(?<=[^\\wа-яё]|^)(КонецПроцедуры|EndProcedure|КонецФункции|EndFunction)(?=[^\\wа-яё]|$))"
 	}
 	{
 		name: "keyword.control.import.bsl"
-		match: "\\#(Использовать|Use)(?=[^\\wа-ё]|$)"
+		match: "\\#(Использовать|Use)(?=[^\\wа-яё]|$)"
 	}
 	{
 		name: "keyword.control.bsl"
-		match: "(?i:(?<=[^\\wа-ё]|^)(Прервать|Break|Продолжить|Continue|Возврат|Return)(?=[^\\wа-ё]|$))"
+		match: "(?i:(?<=[^\\wа-яё]|^)(Прервать|Break|Продолжить|Continue|Возврат|Return)(?=[^\\wа-яё]|$))"
 	}
 	{
 		name: "keyword.control.conditional.bsl"
-		match: "(?i:(?<=[^\\wа-ё]|^)(Если|If|Иначе|Else|ИначеЕсли|ElsIf|Тогда|Then|КонецЕсли|EndIf)(?=[^\\wа-ё]|$))"
+		match: "(?i:(?<=[^\\wа-яё]|^)(Если|If|Иначе|Else|ИначеЕсли|ElsIf|Тогда|Then|КонецЕсли|EndIf)(?=[^\\wа-яё]|$))"
 	}
 	{
 		name: "keyword.control.exception.bsl"
-		match: "(?i:(?<=[^\\wа-ё]|^)(Попытка|Try|Исключение|Except|КонецПопытки|EndTry|ВызватьИсключение|Raise)(?=[^\\wа-ё]|$))"
+		match: "(?i:(?<=[^\\wа-яё]|^)(Попытка|Try|Исключение|Except|КонецПопытки|EndTry|ВызватьИсключение|Raise)(?=[^\\wа-яё]|$))"
 	}
 	{
 		name: "keyword.control.repeat.bsl"
-		match: "(?i:(?<=[^\\wа-ё]|^)(Пока|While|(Для|For) (Каждого|Each)?|Из|In|По|To|Цикл|Do|КонецЦикла|EndDo)(?=[^\\wа-ё]|$))"
+		match: "(?i:(?<=[^\\wа-яё]|^)(Пока|While|(Для|For) (Каждого|Each)?|Из|In|По|To|Цикл|Do|КонецЦикла|EndDo)(?=[^\\wа-яё]|$))"
 	}
 	{
 		name: "keyword.operator.logical.bsl"
-		match: "(?i:(?<=[^\\wа-ё]|^)(НЕ|NOT|И|AND|ИЛИ|OR)(?=[^\\wа-ё]|$))"
+		match: "(?i:(?<=[^\\wа-яё]|^)(НЕ|NOT|И|AND|ИЛИ|OR)(?=[^\\wа-яё]|$))"
 	}
 	{
 		name: "keyword.operator.comparison.bsl"
@@ -131,16 +131,16 @@ patterns: [
 	{
 		name: "support.function.bsl"
 		comment: "Functions w/o brackets"
-		match: "(?i:(?<=[^\\wа-ё]|^)(Новый|New)(?=[^\\wа-ё]|$))"
+		match: "(?i:(?<=[^\\wа-яё]|^)(Новый|New)(?=[^\\wа-яё]|$))"
 	}
 	{
 		name: "support.function.bsl"
 		comment: "Functions w/ brackets"
-		match: "(^|\\s)(?i:(ACos|ACos|ASin|ASin|ATan|ATan|Cos|Cos|Exp|Exp|Log|Log|Log10|Log10|Pow|Pow|Sin|Sin|Sqrt|Sqrt|Tan|Tan|Булево|Boolean|ВРег|Upper|Вычислить|Eval|Выполнить|Execute|Год|Year|Дата|Date|День|Day|ДеньГода|DayOfYear|ДеньНедели|WeekDay|ДобавитьМесяц|AddMonth|ИнформацияОбОшибке|ErrorInfo|КодСимвола|CharCode|КонецГода|EndOfYear|КонецДня|EndOfDay|КонецКвартала|EndOfQuarter|КонецМесяца|EndOfMonth|КонецМинуты|EndOfMinute|КонецНедели|EndOfWeek|КонецЧаса|EndOfHour|Лев|Left|Макс|Max|Месяц|Month|Мин|Min|Минута|Minute|Найти|Find|НачалоГода|BegOfYear|НачалоДня|BegOfDay|НачалоКвартала|BegOfQuarter|НачалоМесяца|BegOfMonth|НачалоМинуты|BegOfMinute|НачалоНедели|BegOfWeek|НачалоЧаса|BegOfHour|НеделяГода|WeekOfYear|НРег|Lower|Окр|Round|ОписаниеОшибки|ErrorDescription|Прав|Right|ПустаяСтрока|IsBlankString|Секунда|Second|Символ|Char|СокрЛ|TrimL|СокрЛП|TrimAll|СокрП|TrimR|Сред|Mid|СтрДлина|StrLen|СтрЗаменить|StrReplace|Строка|String|СтрПолучитьСтроку|StrGetLine|СтрЧислоВхождений|StrOccurrenceCount|СтрЧислоСтрок|StrLineCount|ТекущаяДата|CurrentDate|Тип|Type|ТипЗнч|TypeOf|ТРег|Title|Формат|Format|Цел|Int|Час|Hour|Число|Number))\\s*(?=\\()"
+		match: "(^|\\s)(?i:(ACos|ACos|ASin|ASin|ATan|ATan|Cos|Cos|Exp|Exp|Log|Log|Log10|Log10|Pow|Pow|Sin|Sin|Sqrt|Sqrt|Tan|Tan|Булево|Boolean|ВРег|Upper|Вычислить|Eval|Выполнить|Execute|Год|Year|Дата|Date|День|Day|ДеньГода|DayOfYear|ДеньНедели|WeekDay|ДобавитьМесяц|AddMonth|ИнформацияОбОшибке|ErrorInfo|КодСимвола|CharCode|КонецГода|EndOfYear|КонецДня|EndOfDay|КонецКвартала|EndOfQuarter|КонецМесяца|EndOfMonth|КонецМинуты|EndOfMinute|КонецНедели|EndOfWeek|КонецЧаса|EndOfHour|Лев|Left|Макс|Max|Месяц|Month|Мин|Min|Минута|Minute|Найти|Find|НачалоГода|BegOfYear|НачалоДня|BegOfDay|НачалоКвартала|BegOfQuarter|НачалоМесяца|BegOfMonth|НачалоМинуты|BegOfMinute|НачалоНедели|BegOfWeek|НачалоЧаса|BegOfHour|НеделяГода|WeekOfYear|НРег|Lower|Окр|Round|ОписаниеОшибки|ErrorDescription|Прав|Right|ПустаяСтрока|IsBlankString|Секунда|Second|Символ|Char|СокрЛ|TrimL|СокрЛП|TrimAll|СокрП|TrimR|Сред|Mid|СтрДлина|StrLen|СтрЗаканчиваетсяНа|StrEndsWith|СтрЗаменить|StrReplace|СтрНайти|StrFind|СтрНачинаетсяС|StrStartWith|Строка|String|СтрПолучитьСтроку|StrGetLine|СтрРазделить|StrSplit|СтрСоединить|StrConcat|СтрСравнить|StrCompare|СтрЧислоВхождений|StrOccurrenceCount|СтрЧислоСтрок|StrLineCount|СтрШаблон|StrTemplate|ТекущаяДата|CurrentDate|Тип|Type|ТипЗнч|TypeOf|ТРег|Title|Формат|Format|Цел|Int|Час|Hour|Число|Number))\\s*(?=\\()"
 	}
 	{
 		name: "storage.modifier.bsl"
-		match: "(?i:&(НаКлиенте|AtClient|НаСервере|AtServer|НаСервереБезКонтекста|AtServerNoContext|НаКлиентеНаСервереБезКонтекста|AtClientAtServerNoContext|НаКлиентеНаСервере|AtClientAtServer))"
+		match: "(?i:&(НаКлиенте((НаСервере(БезКонтекста)?)?)|AtClient((AtServer(NoContext)?)?)|НаСервере(БезКонтекста)?|AtServer(NoContext)?))"
 	}
 	{
 		name: "keyword.other.preprocessor.bsl"

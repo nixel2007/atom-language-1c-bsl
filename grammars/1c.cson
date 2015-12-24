@@ -35,7 +35,7 @@ patterns: [
 				name: "storage.type.bsl"
 			"2":
 				name: "entity.name.function.bsl"
-		end: "(?i:\\)\\s+((Экспорт|Export)(?=[^\\wа-яё]|$))?)"
+		end: "(?i:\\)\\s*((Экспорт|Export)(?=[^\\wа-яё]|$))?)"
 		endCaptures:
 			"1":
 				name: "storage.modifier.bsl"

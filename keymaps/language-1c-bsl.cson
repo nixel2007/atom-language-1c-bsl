@@ -1,0 +1,2 @@
+"atom-text-editor[data-grammar='source bsl']":
+  'enter': 'language-1c-bsl:addpipe'

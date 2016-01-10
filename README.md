@@ -20,4 +20,4 @@ Adds syntax highlighting to \*.bsl и \*.os files in Atom.
 
 Contributions are greatly appreciated. Development is carried in a parent repository [xDrivenDevelopment/1c-syntax](https://github.com/xDrivenDevelopment/1c-syntax)
 
-![default](https://cloud.githubusercontent.com/assets/1132840/11655041/7dce323c-9dbb-11e5-9fbd-9d2e697f67c1.PNG)
+![atom](https://cloud.githubusercontent.com/assets/1132840/12221782/f4ea36b4-b7b9-11e5-9d38-694fa1a6875d.PNG)

@@ -51,6 +51,6 @@ module.exports = Language1cBSL =
             name: 'OneScript: make',
             sh: false,
             exec: 'oscript',
-            args: [ '-encoding=utf-8', '-make', '{FILE_ACTIVE}' ]
+            args: [ '-encoding=utf-8', '-make', '{FILE_ACTIVE}', '{FILE_ACTIVE_NAME_BASE}.exe' ]
 
         ]

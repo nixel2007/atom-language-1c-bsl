@@ -14,5 +14,13 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "providedServices": {
+      "builder": {
+        "description": "Builds 1C (BSL) files with OneScript",
+        "versions": {
+          "2.0.0": "provideBuilder"
+        }
+      }
+    }
 }

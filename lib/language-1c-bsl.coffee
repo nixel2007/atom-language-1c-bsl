@@ -13,7 +13,7 @@ module.exports = Language1cBSL =
 
   addpipe: ->
     editor = atom.workspace.getActiveTextEditor()
-    editor.insertText('\n')
+    editor.insertText '\n'
     scope = editor.getLastCursor().getScopeDescriptor().toString()
-    if scope==".source.bsl .string.quoted.double.bsl"
-      editor.insertText('|')
+    if scope is '.source.bsl .string.quoted.double.bsl'
+      editor.insertText '|'

@@ -16,10 +16,12 @@ patterns: [
 		end: "\\\""
 		patterns: [
 			{
+				name: "constant.character.escape.bsl"
 				match: "\\\"\\\""
 			}
 			{
-				name: "constant.character.escape.bsl"
+				name: "comment.line.double-slash.bsl"
+				match: "(^\\s*//.*$)"
 			}
 		]
 	}

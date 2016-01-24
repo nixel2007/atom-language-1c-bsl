@@ -1,3 +1,5 @@
 '.source.bsl':
   'editor':
     'commentStart': '//'
+    'tabLength': 4
+    'tabType': 'hard'

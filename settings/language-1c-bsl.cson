@@ -3,3 +3,6 @@
     'commentStart': '//'
     'tabLength': 4
     'tabType': 'hard'
+    'foldEndPattern': '(?i)(^\\s*конецесли|^\\s*конеццикла|^\\s*конецпроцедуры|^\\s*конецпопытки|^\\s*конецфункции)'
+    'increaseIndentPattern': '(?i)^\\s*\\b(пока|процедура|функция|если|иначе|иначеесли|попытка|исключение|для|while|procedure|function|if|else|elseif|try|for)\\b[^;]*$'
+    'decreaseIndentPattern': '(?i)^\\s*\\b(конецесли|конеццикла|конецпроцедуры|конецфункции|иначе|иначеесли|конецпопытки|исключение|endif|enddo|endprocedure|endfunction|else|elseif|endtry|except)\\b.*$'

@@ -14,9 +14,13 @@ module.exports = Language1cBSL =
 
   addpipe: ->
     editor = atom.workspace.getActiveTextEditor()
+    cursorPos = editor.getLastCursor().getBufferPosition()
+    beginRow = editor.getLastCursor().getCurrentLineBufferRange().start
+    textRow = editor.getTextInBufferRange([beginRow, cursorPos])
     editor.insertText '\n'
-    scope = editor.getLastCursor().getScopeDescriptor().toString()
-    if scope is '.source.bsl .string.quoted.double.bsl'
+    Reg1 = /^\s*\|([^\"]|\"[^\"]*\")*$/
+    Reg2 = /^([^\|\"]|\"[^\"]*\")*\"[^\"]*$/
+    if (Reg1.exec(textRow) isnt null) or (Reg2.exec(textRow) isnt null)
       editor.insertText '|'
 
   provideBuilder: ->

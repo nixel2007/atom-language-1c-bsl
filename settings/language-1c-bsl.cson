@@ -787,3 +787,8 @@
         'ReportsUserSettingsStorage'
         'SystemSettingsStorage'
     ]
+'.source.sdbl':
+  'editor':
+    'commentStart': '//'
+    'tabLength': 4
+    'tabType': 'hard'

@@ -16,6 +16,9 @@ patterns: [
 		end: "\\\""
 		patterns: [
 			{
+				include: "#query"
+			}
+			{
 				name: "constant.character.escape.bsl"
 				match: "\\\"\\\""
 			}
@@ -290,3 +293,15 @@ patterns: [
 		match: "(?i)#(КонецОбласти|EndRegion)"
 	}
 ]
+repository:
+	query:
+		begin: "(?i)(Выбрать|Select(\\s+Разрешенные|Allowed)?(\\s+Различные|Distinct)?(\\s+Первые|Top)?)"
+		beginCaptures:
+			"1":
+				name: "keyword.control.sdbl"
+		end: "(?=\\\")"
+		patterns: [
+			{
+				include: "source.sdbl"
+			}
+		]

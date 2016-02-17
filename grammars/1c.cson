@@ -299,8 +299,16 @@ repository:
 		beginCaptures:
 			"1":
 				name: "keyword.control.sdbl"
-		end: "(?=\\\")"
+		end: "(?=\\\"[^\\\"])"
 		patterns: [
+			{
+				name: "comment.line.double-slash.sdbl"
+				match: "(//((\\\"\\\")|[^\\\"])*)"
+			}
+			{
+				name: "string.quoted.double.sdbl"
+				match: "\\\"\\\"[^\"]*\\\"\\\""
+			}
 			{
 				include: "source.sdbl"
 			}

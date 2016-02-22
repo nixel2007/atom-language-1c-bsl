@@ -1,5 +1,7 @@
 {CompositeDisposable} = require 'atom'
 {EventEmitter} = require 'events'
+helpers = require 'atom-linter'
+path = require 'path'
 
 module.exports = Language1cBSL =
   subscriptions: null
@@ -22,6 +24,44 @@ module.exports = Language1cBSL =
     Reg2 = /^([^\|\"]|\"[^\"]*\")*\"[^\"]*$/
     if (Reg1.exec(textRow) isnt null) or (Reg2.exec(textRow) isnt null)
       editor.insertText '|'
+
+  provideLinter: ->
+    name: 'OneScriptLint'
+    grammarScopes: ['source.bsl']
+    scope: 'project'
+    lintOnFly: false # Only lint on save
+
+    lint: (textEditor) =>
+      filePath = textEditor.getPath()
+      wd = path.dirname filePath
+
+      # Arguments to checkstyle
+      args = []
+      args = args.concat(["-encoding=utf-8", "-check", filePath])
+
+      # Execute checkstyle
+      helpers.exec("oscript", args, {stream: 'stdout', cwd: wd, throwOnStdErr: false})
+        .then (val) => @parse(val, textEditor)
+
+  parse: (checkstyleOutput, textEditor) ->
+    # Regex to match the error/warning line
+    regex = /^\{Модуль\s+(.*)\s\/\s.*:\s+(\d+)\s+\/\s+(.*)\}/
+    # Split into lines
+    lines = checkstyleOutput.split /\r?\n/
+    messages = []
+    for line in lines
+
+      if line.match regex
+        [file, lineNum, mess] = line.match(regex)[1..3]
+
+        type = "error"
+
+        messages.push
+          type: type       # Should be "error" or "warning"
+          text: mess       # The error message
+          filePath: file   # Full path to file
+          range: [[lineNum - 1, 0], [lineNum - 1, 0]]
+    return messages
 
   provideBuilder: ->
     class Language1cBSLBuildProvider extends EventEmitter

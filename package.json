@@ -14,12 +14,20 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "atom-linter": "^3.1.1",
+    "atom-package-deps": "^2.0.1"
+  },
   "providedServices": {
     "builder": {
       "description": "Builds 1C (BSL) files with OneScript",
       "versions": {
         "2.0.0": "provideBuilder"
+      }
+    },
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
       }
     }
   }

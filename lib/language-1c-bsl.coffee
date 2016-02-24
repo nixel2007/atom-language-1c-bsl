@@ -10,6 +10,9 @@ module.exports = Language1cBSL =
     @subscriptions = new CompositeDisposable
     @subscriptions.add atom.commands.add 'atom-text-editor', 'language-1c-bsl:addpipe': => @addpipe()
 
+    @subscriptions.add atom.config.observe 'language-1c-bsl.enableOneScriptLinter', (@enableOneScriptLinter) =>
+    @subscriptions.add atom.config.observe 'language-1c-bsl.lintBSLFiles', (@lintBSLFiles) =>
+
   deactivate: ->
     @subscriptions.dispose()
 
@@ -28,10 +31,13 @@ module.exports = Language1cBSL =
     name: 'OneScriptLint'
     grammarScopes: ['source.bsl']
     scope: 'file'
-    lintOnFly: false # Only lint on save
+    lintOnFly: true # false for lint only on save
 
     lint: (textEditor) =>
+      return [] unless @enableOneScriptLinter
+
       filePath = textEditor.getPath()
+      return [] if filePath.endsWith(".bsl") and not @lintBSLFiles
 
       # Arguments to checkstyle
       args = []

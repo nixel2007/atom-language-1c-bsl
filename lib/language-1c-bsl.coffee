@@ -1,7 +1,6 @@
 {CompositeDisposable} = require 'atom'
 {EventEmitter} = require 'events'
 helpers = require 'atom-linter'
-path = require 'path'
 
 module.exports = Language1cBSL =
   subscriptions: null
@@ -33,7 +32,6 @@ module.exports = Language1cBSL =
 
     lint: (textEditor) =>
       filePath = textEditor.getPath()
-      wd = path.dirname filePath
 
       # Arguments to checkstyle
       args = []

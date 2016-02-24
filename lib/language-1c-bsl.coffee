@@ -60,7 +60,7 @@ module.exports = Language1cBSL =
           type: type       # Should be "error" or "warning"
           text: mess       # The error message
           filePath: file   # Full path to file
-          range: [[lineNum - 1, 0], [lineNum - 1, 0]]
+          range: [[lineNum - 1, 0], [lineNum - 1, Infinity]]
     return messages
 
   provideBuilder: ->

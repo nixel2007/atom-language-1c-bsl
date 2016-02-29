@@ -14,13 +14,37 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "atom-linter": "^3.1.1",
+    "atom-package-deps": "^2.0.1"
+  },
   "providedServices": {
     "builder": {
       "description": "Builds 1C (BSL) files with OneScript",
       "versions": {
         "2.0.0": "provideBuilder"
       }
+    },
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    }
+  },
+  "configSchema": {
+    "enableOneScriptLinter": {
+      "title": "Enable linting of files",
+      "description": "Lint files through `OneScript -check` command",
+      "type": "boolean",
+      "default": true,
+      "order": 10
+    },
+    "lintBSLFiles": {
+      "title": "Lint *.bsl files as *.os",
+      "description": "Enable this if you want to check `*.bsl` files via OneScriptLint",
+      "type": "boolean",
+      "default": false,
+      "order": 20
     }
   }
 }

@@ -1,11 +1,11 @@
 // SYNTAX TEST "source.bsl"
 #Область ИмяОбласти
-// ^ keyword.other.section.bsl
+// <- keyword.other.section.bsl
 //       ^ entity.name.section.bsl
 
 Перем А Экспорт;
-//  ^ storage.type.var.bsl
-//          ^ storage.modifier.bsl
+// <- storage.type.var.bsl
+//      ^ storage.modifier.bsl
 
 // Комментарий процедуры
 // <- comment.line.double-slash.bsl

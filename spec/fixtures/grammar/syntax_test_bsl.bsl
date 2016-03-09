@@ -1,12 +1,12 @@
 // SYNTAX TEST "source.bsl"
-#Область ИмяОбласти  
+#Область ИмяОбласти
 // ^ keyword.other.section.bsl
 //       ^ entity.name.section.bsl
 
 // Комментарий процедуры
-// ^ comment.line.double-slash.bsl
+// <- comment.line.double-slash.bsl
 Процедура ИмяПроцедуры(Знач ПараметрСКонстантой, ОбычныйПараметр, ПараметрСДефолтнымЧисловымЗначением = 0) Экспорт
-// ^ storage.type.bsl
+// <- storage.type.bsl
 //        ^ entity.name.function.bsl
 //                     ^ storage.modifier.bsl
 //                          ^ variable.parameter.bsl
@@ -50,7 +50,7 @@
     НевстроеннаяПроцедура();
     
 КонецПроцедуры
-// ^ storage.type.bsl
+// <- storage.type.bsl
 
 Процедура НевстроеннаяПроцедура()
     Возврат;
@@ -58,4 +58,4 @@
 КонецПроцедуры
 
 #КонецОбласти
-// ^ keyword.other.section.bsl
+// <- keyword.other.section.bsl

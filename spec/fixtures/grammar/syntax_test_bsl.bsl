@@ -30,6 +30,7 @@
     Б = "текст с экраннированной "" кавычкой";
 //       ^ string.quoted.double.bsl
 //                               ^ constant.character.escape.bsl
+//                                           ^ keyword.operator.bsl
 
     В = "многострочная
 //      ^ string.quoted.double.bsl

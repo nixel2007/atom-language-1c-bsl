@@ -19,18 +19,22 @@
     ОбычныйПараметр,
 //  ^ variable.parameter.bsl
     ПараметрСНекорректнымЗначением = Нелегальщина,
+//                                  ^ not:invalid.illegal.bsl
 //                                   ^ invalid.illegal.bsl
     ПараметрСНекорректнымЗначением =НелегальщинаБезПробела,
 //                                  ^ invalid.illegal.bsl
+//                                                        ^ keyword.operator.bsl
     ПараметрСДефолтнымЧисловымЗначением = 0) Экспорт
 //                                      ^ keyword.operator.comparison.bsl
 //                                        ^ constant.numeric.bsl
 //                                           ^ storage.modifier.bsl
 
-    Б = "текст с экраннированной "" кавычкой";
+    Б = "текст с экраннированной "" кавычкой" + "и конкатенаций";
 //       ^ string.quoted.double.bsl
 //                               ^ constant.character.escape.bsl
-//                                           ^ keyword.operator.bsl
+//                                            ^ keyword.operator.arithmetic.bsl
+//                                              ^ string.quoted.double.bsl
+//                                                              ^ keyword.operator.bsl
 
     В = "многострочная
 //      ^ string.quoted.double.bsl
@@ -45,7 +49,10 @@
 //    ^ keyword.operator.bsl
 
     GUID = 00000000-0000-0000-0000-000000000000;
-//         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ constant.numeric.bsl 
+//         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ constant.numeric.bsl
+    Число = 0.0;
+//  ^ not:support.function.bsl
+//          ^^^ constant.numeric.bsl
     Если А = 0 Тогда
 //  ^ keyword.control.conditional.bsl
 //         ^ keyword.operator.comparison.bsl
@@ -69,7 +76,7 @@
 //  ^ keyword.control.repeat.bsl
     
     НевстроеннаяПроцедура();
-//  x^ support.function.bsl
+//  ^ not:support.function.bsl
     
 КонецПроцедуры
 // <- storage.type.bsl

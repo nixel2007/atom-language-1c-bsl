@@ -44,6 +44,8 @@
 //   ^ string.quoted.double.bsl
 //    ^ keyword.operator.bsl
 
+    GUID = 00000000-0000-0000-0000-000000000000;
+//         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ constant.numeric.bsl 
     Если А = 0 Тогда
 //  ^ keyword.control.conditional.bsl
 //         ^ keyword.operator.comparison.bsl

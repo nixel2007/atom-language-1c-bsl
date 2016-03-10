@@ -28,10 +28,8 @@
 //                                      ^ keyword.operator.comparison.bsl
 //                                        ^ constant.numeric.bsl
 //                                           ^ storage.modifier.bsl
-
     Б = "текст с экраннированной "" кавычкой" + "и конкатенаций""";
 //       ^ string.quoted.double.bsl
-//                               ^^ constant.character.escape.bsl
 //                               ^^ constant.character.escape.bsl
 //                                 ^ not:constant.character.escape.bsl
 //                                              ^ string.quoted.double.bsl
@@ -50,6 +48,37 @@
     |";
 //   ^ string.quoted.double.bsl
 //    ^ keyword.operator.bsl
+
+    Г = "";
+//      ^^ string.quoted.double.bsl
+
+    ТекстЗапроса =
+    "ВЫБРАТЬ
+//  ^^ string.quoted.double.bsl
+//   ^ keyword.control.sdbl
+	|	Таблица.Поле КАК Поле,
+	|	МАКСИМУМ(Таблица.Поле2) КАК Поле2
+	|ИЗ
+	|	Таблица КАК Таблица
+	|ГДЕ
+	|	Таблица.Поле = 0
+	|	И Таблица.Поле <> ""Строка""
+	|	И ВЫРАЗИТЬ(Таблица.Поле КАК СТРОКА) <> """"
+	|	И Таблица.Поле <> ""Строка с экраннированной """" кавычкой""
+    //|Закомментированная строка
+//  ^ string.quoted.double.bsl comment.line.double-slash.sdbl
+    |// Закомметированная строка внутри запроса с кавычками ""ТЕКСТ""
+//  ^ string.quoted.double.bsl
+//  ^ not:comment.line.double-slash.sdbl
+//   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.sdbl
+	|СГРУППИРОВАТЬ ПО
+	|	Поле
+    |//АВТОУПОРЯДОЧИВАНИЕ";
+//  ^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.bsl
+//  ^ not:comment.line.double-slash.sdbl
+//   ^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.sdbl
+//                       ^ not:comment.line.double-slash.sdbl
+//                        ^ keyword.operator.bsl
 
     GUID = 00000000-0000-0000-0000-000000000000;
 //         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ constant.numeric.bsl

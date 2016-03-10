@@ -66,7 +66,7 @@
 	|	И ВЫРАЗИТЬ(Таблица.Поле КАК СТРОКА) <> """"
 	|	И Таблица.Поле <> ""Строка с экраннированной """" кавычкой""
     //|Закомментированная строка
-//  ^ string.quoted.double.bsl comment.line.double-slash.sdbl
+//  ^ string.quoted.double.bsl comment.line.double-slash.bsl
     |// Закомметированная строка внутри запроса с кавычками ""ТЕКСТ""
 //  ^ string.quoted.double.bsl
 //  ^ not:comment.line.double-slash.sdbl

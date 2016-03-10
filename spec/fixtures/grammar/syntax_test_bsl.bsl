@@ -29,12 +29,15 @@
 //                                        ^ constant.numeric.bsl
 //                                           ^ storage.modifier.bsl
 
-    Б = "текст с экраннированной "" кавычкой" + "и конкатенаций";
+    Б = "текст с экраннированной "" кавычкой" + "и конкатенаций""";
 //       ^ string.quoted.double.bsl
-//                               ^ constant.character.escape.bsl
-//                                            ^ keyword.operator.arithmetic.bsl
+//                               ^^ constant.character.escape.bsl
+//                               ^^ constant.character.escape.bsl
+//                                 ^ not:constant.character.escape.bsl
 //                                              ^ string.quoted.double.bsl
-//                                                              ^ keyword.operator.bsl
+//                                                             ^^ constant.character.escape.bsl
+//                                                               ^ not:constant.character.escape.bsl
+//                                                                ^ keyword.operator.bsl
 
     В = "многострочная
 //      ^ string.quoted.double.bsl

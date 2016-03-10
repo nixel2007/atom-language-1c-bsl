@@ -19,7 +19,7 @@
     "atom-package-deps": "^4.0.1"
   },
   "devDependencies": {
-    "atom-grammar-test": "^0.5.1"
+    "atom-grammar-test": "^0.6.0"
   },
   "package-deps": [
     "linter"

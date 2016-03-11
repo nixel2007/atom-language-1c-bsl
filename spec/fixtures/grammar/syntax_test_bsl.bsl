@@ -5,6 +5,7 @@
 
 Перем А Экспорт;
 // <- storage.type.var.bsl
+//    ^ variable.bsl
 //      ^ storage.modifier.bsl
 
 // Комментарий процедуры

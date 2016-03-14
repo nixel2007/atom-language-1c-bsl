@@ -85,7 +85,7 @@ patterns: [
 	}
 	{
 		name: "constant.other.date.bsl"
-		match: "\\'((\\d{6})|(\\d{12}))\\'"
+		match: "\\'((\\d{8})|(\\d{14}))\\'"
 	}
 	{
 		name: "storage.type.bsl"

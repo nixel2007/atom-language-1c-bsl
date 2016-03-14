@@ -14,7 +14,7 @@ patterns: [
 	{
 		name: "string.quoted.double.sdbl"
 		begin: "\\\""
-		end: "\\\""
+		end: "\\\"(?![\\\"])"
 		patterns: [
 			{
 				name: "constant.character.escape.sdbl"
@@ -45,10 +45,6 @@ patterns: [
 	{
 		name: "keyword.operator.comparison.sdbl"
 		match: "<=|>=|=|<|>"
-	}
-	{
-		name: "keyword.operator.assignment.sdbl"
-		match: "(=)"
 	}
 	{
 		name: "keyword.operator.arithmetic.sdbl"

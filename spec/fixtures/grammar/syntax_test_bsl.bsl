@@ -91,9 +91,10 @@
 
     GUID = 00000000-0000-0000-0000-000000000000;
 //         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ constant.numeric.bsl
-    Число = 0.0;
+    Число = 0.0 * 100;
 //  ^ not:support.function.bsl
 //          ^^^ constant.numeric.bsl
+//              ^ keyword.operator.arithmetic.bsl
 	
     Дата = '000101010000';
 //         ^^^^^^^^^^^^^^ constant.other.date.bsl

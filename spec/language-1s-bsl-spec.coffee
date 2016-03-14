@@ -9,3 +9,4 @@ describe "language-1c-bsl", ->
 
   grammarTest path.join(__dirname, 'fixtures/grammar/syntax_test_bsl.bsl')
   grammarTest path.join(__dirname, 'fixtures/grammar/syntax_test_bsl.os')
+  grammarTest path.join(__dirname, 'fixtures/grammar/syntax_test_sdbl.txt')

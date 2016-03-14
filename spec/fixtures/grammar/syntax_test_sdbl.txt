@@ -1,0 +1,13 @@
+// SYNTAX TEST "source.sdbl"
+ВЫБРАТЬ
+// <- keyword.control.sdbl
+// Комментарий запроса
+// <- comment.line.double-slash.sdbl
+    "Многострочная
+//  ^ string.quoted.double.sdbl
+    // это Комментарий
+//  ^ comment.line.double-slash.sdbl
+    с экранированной "" кавычкой
+//                   ^^ constant.character.escape.sdbl
+	строка" КАК Поле
+//  ^ string.quoted.double.sdbl

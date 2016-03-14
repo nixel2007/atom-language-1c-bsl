@@ -96,8 +96,8 @@
 //          ^^^ constant.numeric.bsl
 //              ^ keyword.operator.arithmetic.bsl
 	
-    Дата = '000101010000';
-//         ^^^^^^^^^^^^^^ constant.other.date.bsl
+    Дата = '00010101000000';
+//         ^^^^^^^^^^^^^^^^ constant.other.date.bsl
     КороткаяДата = '00010101';
 //                 ^^^^^^^^^^ constant.other.date.bsl
 

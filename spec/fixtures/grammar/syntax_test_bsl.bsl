@@ -101,11 +101,14 @@
     КороткаяДата = '00010101';
 //                 ^^^^^^^^^^ constant.other.date.bsl
 
-    Если А = 0 Тогда
+    Если А = 0 И НЕ Число <= 0 Тогда
 //  ^ keyword.control.conditional.bsl
 //         ^ keyword.operator.comparison.bsl
 //           ^ constant.numeric.bsl
-//             ^ keyword.control.conditional.bsl
+//             ^ keyword.operator.logical.bsl
+//               ^^ keyword.operator.logical.bsl
+//                        ^^ keyword.operator.comparison.bsl
+//                             ^ keyword.control.conditional.bsl
 
         ОбычныйПараметр = Истина;
 //                        ^ constant.language.bsl

@@ -8,8 +8,15 @@
 //    ^ variable.bsl
 //      ^ storage.modifier.bsl
 
+#Если Сервер Тогда 
+// <- keyword.other.preprocessor.bsl
+//    ^^^^^^ keyword.other.preprocessor.bsl
+
 // Комментарий процедуры
 // <- comment.line.double-slash.bsl
+&НаСервере
+// <- storage.modifier.bsl
+// ^ storage.modifier.bsl
 Процедура ИмяПроцедуры(
 // <- storage.type.bsl
 //        ^ entity.name.function.bsl
@@ -118,6 +125,10 @@
     Возврат;
 //  ^ keyword.control.bsl
 КонецПроцедуры
+
+#КонецЕсли
+// <- keyword.other.preprocessor.bsl
+// ^ keyword.other.preprocessor.bsl
 
 #КонецОбласти
 // <- keyword.other.section.bsl

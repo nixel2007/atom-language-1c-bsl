@@ -8,3 +8,4 @@ describe "language-1c-bsl", ->
       atom.packages.activatePackage('language-1c-bsl')
 
   grammarTest path.join(__dirname, 'fixtures/grammar/syntax_test_bsl.bsl')
+  grammarTest path.join(__dirname, 'fixtures/grammar/syntax_test_bsl.os')

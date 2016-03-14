@@ -133,6 +133,9 @@
 //                      ^^^^^ support.function.bsl
 //                           ^ not:support.function.bsl	
 	
+    ПрефиксЗначениеЗаполненоПостфикс = "";
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ not:support.function.bsl
+	
 КонецПроцедуры
 // <- storage.type.bsl
 

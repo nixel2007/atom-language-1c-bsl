@@ -124,7 +124,14 @@
     
     НевстроеннаяПроцедура();
 //  ^ not:support.function.bsl
-    
+
+    НовыйОбъект = Новый ТаблицаЗначений;
+//                ^^^^^ support.function.bsl
+//                     ^ not:support.function.bsl	
+    НовыйОбъектСкобка = Новый("ТаблицаЗначений");
+//                      ^^^^^ support.function.bsl
+//                           ^ not:support.function.bsl	
+	
 КонецПроцедуры
 // <- storage.type.bsl
 

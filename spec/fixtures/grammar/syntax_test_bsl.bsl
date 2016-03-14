@@ -94,6 +94,12 @@
     Число = 0.0;
 //  ^ not:support.function.bsl
 //          ^^^ constant.numeric.bsl
+	
+    Дата = '000101010000';
+//         ^^^^^^^^^^^^^^ constant.other.date.bsl
+    КороткаяДата = '00010101';
+//                 ^^^^^^^^^^ constant.other.date.bsl
+
     Если А = 0 Тогда
 //  ^ keyword.control.conditional.bsl
 //         ^ keyword.operator.comparison.bsl

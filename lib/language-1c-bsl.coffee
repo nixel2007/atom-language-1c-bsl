@@ -12,7 +12,9 @@ module.exports = Language1cBSL =
 
     @subscriptions.add atom.config.observe 'language-1c-bsl.enableOneScriptLinter', (@enableOneScriptLinter) =>
     @subscriptions.add atom.config.observe 'language-1c-bsl.lintBSLFiles', (@lintBSLFiles) =>
-
+    @subscriptions.add atom.config.observe 'language-1c-bsl.forceEnableExtendedUnicodeSupport', (enableExtendedUnicodeSupport) ->
+      atom.config.set('autocomplete-plus.enableExtendedUnicodeSupport', enableExtendedUnicodeSupport)
+    
   deactivate: ->
     @subscriptions.dispose()
 

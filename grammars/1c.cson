@@ -93,7 +93,7 @@ patterns: [
   }
   {
     name: "keyword.control.import.bsl"
-    match: "\\#(Использовать|Use)(?=[^\\wа-яё]|$)"
+    match: "(?i)#(Использовать|Use)(?=[^\\wа-яё]|$)"
   }
   {
     name: "keyword.control.bsl"

@@ -5,11 +5,12 @@ platform: x64
 branches:
     only:
       - master
+      - develop
 
 skip_tags: true
 
 environment:
-  APM_TEST_PACKAGES:
+  APM_TEST_PACKAGES: linter
 
   matrix:
   - ATOM_CHANNEL: stable

@@ -100,6 +100,13 @@
 //         ^^^^^^^^^^^^^^^^ constant.other.date.bsl
     КороткаяДата = '00010101';
 //                 ^^^^^^^^^^ constant.other.date.bsl
+    ДатаСРазделителями = '0001-01-01T00:00:00';
+//                       ^^^^^^^^^^^^^^^^^^^^^ constant.other.date.bsl
+    КороткаяДатаСРазделителями = '0001/01/01';
+//                               ^^^^^^^^^^^^ constant.other.date.bsl
+    СтрокаСДатойВнутри = "Литерал типа Дата: '00010101'";
+//                                          ^^^^^^^^^^^^ string.quoted.double.bsl
+//                                           ^^^^^^^^^^ not:constant.other.date.bsl
 
     Если А = 0 И НЕ Число <= 0 Тогда
 //  ^ keyword.control.conditional.bsl

@@ -129,7 +129,7 @@
 //  ^ keyword.control.repeat.bsl
 //       ^ support.function.bsl
         Прервать;
-//      ^ keyword.control.repeat.bsl        
+//      ^ keyword.control.bsl        
     КонецЦикла;
 //  ^ keyword.control.repeat.bsl
     

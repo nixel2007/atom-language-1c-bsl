@@ -146,6 +146,12 @@
     ПрефиксЗначениеЗаполненоПостфикс = "";
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ not:support.function.bsl
     
+    // Проверка на корректность обработки начала и конца слова
+    Объект.Сообщить().Если().Цикл().Новый;
+//         ^^^^^^^^                 ^^^^^ not:support.function.bsl
+//                    ^^^^ not:keyword.control.conditional.bsl
+//                           ^^^^ not: keyword.control.repeat.bsl
+
 КонецПроцедуры
 // <- storage.type.bsl
 

@@ -65,23 +65,23 @@
     "ВЫБРАТЬ
 //  ^^ string.quoted.double.bsl
 //   ^ keyword.control.sdbl
-	|	Таблица.Поле КАК Поле,
-	|	МАКСИМУМ(Таблица.Поле2) КАК Поле2
-	|ИЗ
-	|	Таблица КАК Таблица
-	|ГДЕ
-	|	Таблица.Поле = 0
-	|	И Таблица.Поле <> ""Строка""
-	|	И ВЫРАЗИТЬ(Таблица.Поле КАК СТРОКА) <> """"
-	|	И Таблица.Поле <> ""Строка с экраннированной """" кавычкой""
+    |	Таблица.Поле КАК Поле,
+    |	МАКСИМУМ(Таблица.Поле2) КАК Поле2
+    |ИЗ
+    |	Таблица КАК Таблица
+    |ГДЕ
+    |	Таблица.Поле = 0
+    |	И Таблица.Поле <> ""Строка""
+    |	И ВЫРАЗИТЬ(Таблица.Поле КАК СТРОКА) <> """"
+    |	И Таблица.Поле <> ""Строка с экраннированной """" кавычкой""
     //|Закомментированная строка
 //  ^ string.quoted.double.bsl comment.line.double-slash.bsl
     |// Закомметированная строка внутри запроса с кавычками ""ТЕКСТ""
 //  ^ string.quoted.double.bsl
 //  ^ not:comment.line.double-slash.sdbl
 //   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.sdbl
-	|СГРУППИРОВАТЬ ПО
-	|	Поле
+    |СГРУППИРОВАТЬ ПО
+    |	Поле
     |//АВТОУПОРЯДОЧИВАНИЕ";
 //  ^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.bsl
 //  ^ not:comment.line.double-slash.sdbl
@@ -95,7 +95,7 @@
 //  ^ not:support.function.bsl
 //          ^^^ constant.numeric.bsl
 //              ^ keyword.operator.arithmetic.bsl
-	
+    
     Дата = '00010101000000';
 //         ^^^^^^^^^^^^^^^^ constant.other.date.bsl
     КороткаяДата = '00010101';
@@ -138,14 +138,20 @@
 
     НовыйОбъект = Новый ТаблицаЗначений;
 //                ^^^^^ support.function.bsl
-//                     ^ not:support.function.bsl	
+//                     ^ not:support.function.bsl
     НовыйОбъектСкобка = Новый("ТаблицаЗначений");
 //                      ^^^^^ support.function.bsl
-//                           ^ not:support.function.bsl	
-	
+//                           ^ not:support.function.bsl
+    
     ПрефиксЗначениеЗаполненоПостфикс = "";
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ not:support.function.bsl
-	
+    
+    // Проверка на корректность обработки начала и конца слова
+    Объект.Сообщить().Если().Цикл().Новый;
+//         ^^^^^^^^                 ^^^^^ not:support.function.bsl
+//                    ^^^^ not:keyword.control.conditional.bsl
+//                           ^^^^ not: keyword.control.repeat.bsl
+
 КонецПроцедуры
 // <- storage.type.bsl
 

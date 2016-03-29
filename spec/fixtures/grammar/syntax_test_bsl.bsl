@@ -150,7 +150,7 @@
     Объект.Сообщить().Если().Цикл().Новый;
 //         ^^^^^^^^                 ^^^^^ not:support.function.bsl
 //                    ^^^^ not:keyword.control.conditional.bsl
-//                           ^^^^ not: keyword.control.repeat.bsl
+//                           ^^^^ not:keyword.control.repeat.bsl
 
 КонецПроцедуры
 // <- storage.type.bsl

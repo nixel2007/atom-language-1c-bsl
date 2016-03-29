@@ -89,6 +89,10 @@
 //                       ^ not:comment.line.double-slash.sdbl
 //                        ^ keyword.operator.bsl
 
+    // Проверка на корректность обработки FirstLineMatch и #include: source.sdbl
+    СтрокаСоСловомВыбрать = "Some selected text";
+//                                ^^^^^^ not:keyword.control.sdbl
+
     GUID = 00000000-0000-0000-0000-000000000000;
 //         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ constant.numeric.bsl
     Число = 0.0 * 100;
@@ -129,7 +133,7 @@
 //  ^ keyword.control.repeat.bsl
 //       ^ support.function.bsl
         Прервать;
-//      ^ keyword.control.repeat.bsl        
+//      ^ keyword.control.bsl        
     КонецЦикла;
 //  ^ keyword.control.repeat.bsl
     
@@ -150,7 +154,7 @@
     Объект.Сообщить().Если().Цикл().Новый;
 //         ^^^^^^^^                 ^^^^^ not:support.function.bsl
 //                    ^^^^ not:keyword.control.conditional.bsl
-//                           ^^^^ not: keyword.control.repeat.bsl
+//                           ^^^^ not:keyword.control.repeat.bsl
 
 КонецПроцедуры
 // <- storage.type.bsl

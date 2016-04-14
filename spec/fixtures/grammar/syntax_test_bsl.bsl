@@ -82,6 +82,8 @@
 //   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.sdbl
     |СГРУППИРОВАТЬ ПО
     |	Поле
+    //|//АВТОУПОРЯДОЧИВАНИЕ";
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.double-slash.bsl
     |//АВТОУПОРЯДОЧИВАНИЕ";
 //  ^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.bsl
 //  ^ not:comment.line.double-slash.sdbl

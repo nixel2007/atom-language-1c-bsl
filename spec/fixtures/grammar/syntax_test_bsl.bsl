@@ -156,6 +156,12 @@
 //                    ^^^^ not:keyword.control.conditional.bsl
 //                           ^^^^ not:keyword.control.repeat.bsl
 
+    // Проверка подсветки глобальных свойств с точкой
+    Справочники.ИмяСправочника.СоздатьЭлемент();
+//  ^ support.class.bsl
+    А = ХранилищеПользовательскихНастроекДинамическихСписков.Сохранить();
+//      ^ support.variable.bsl
+
 КонецПроцедуры
 // <- storage.type.bsl
 
